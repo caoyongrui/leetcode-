@@ -56,11 +56,25 @@ int strStr(string haystack, string needle)
 	return res;
 }
 
+int strStr1(string haystack, string needle)
+{
+	if (needle.length() == 0)
+		return 0;
+	if (haystack.length() < needle.length())
+		return -1;
+	for (int i = 0; i < haystack.length() - needle.length() + 1; i++)
+	{
+		if (haystack.substr(i, needle.length()) == needle)
+			return i;
+	}
+	return -1;
+}
+
 int main()
 {
 	string haystack = "hello";
-	string needle = "bb";
-	int res = strStr(haystack, needle);
+	string needle = "ll";
+	int res = strStr1(haystack, needle);
 	cout << res << endl;
 
 	system("pause");

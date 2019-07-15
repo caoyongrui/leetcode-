@@ -31,7 +31,7 @@ public:
 	}
 
 	void push(int x) {
-		if (min.empty() || x < min.top())
+		if (min.empty() || x <= min.top())
 			min.push(x);
 		s.push(x);
 	}
